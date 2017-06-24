@@ -3,9 +3,11 @@ import {NgModule} from "@angular/core";
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 
+import "@angular/animations";
+import {MaterialModule} from "@angular/material";
 import {AppComponent} from "./app.component";
 import {NewComponentComponent} from "./new-component/new-component.component";
-
+import "hammerjs";
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +16,10 @@ import {NewComponentComponent} from "./new-component/new-component.component";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterialModule
   ],
-  providers: [],
+  providers: [],             
   bootstrap: [AppComponent]
 })
 export class AppModule {
