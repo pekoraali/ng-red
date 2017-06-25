@@ -1,6 +1,70 @@
 <md-toolbar color="primary">
   <span>GameViewer</span>
+  <span class="spacer"></span>
+  <button md-icon-button
+          [mdMenuTriggerFor]="menu">
+    <md-icon>
+      more_vert
+    </md-icon>
+  </button>
+  <md-menu #menu="mdMenu">
+    <button md-menu-item>
+      <md-icon>
+        fingerprint
+      </md-icon>
+      <span>Login</span>
+    </button>
+    <button md-menu-item
+            disabled>
+      <md-icon>
+        announcement
+      </md-icon>
+      <span>Issues</span>
+    </button>
+    <button md-menu-item>
+      <md-icon>
+        notifications_off
+      </md-icon>
+      <span>Disable alerts</span>
+    </button>
+  </md-menu>
 </md-toolbar>
-<h1>
-  {{title}}
-</h1>
+<md-tab-group>
+  <md-tab label="Gallery">
+    <md-card *ngFor="let spaceScreen of spaceScreens; let i = index">
+      <md-card-header>
+        <md-card-title>
+          Title
+        </md-card-title>
+        <md-card-subtitle>
+          Subtitle
+        </md-card-subtitle>
+      </md-card-header>
+      <img md-card-image
+           src="{{ spaceScreen.img }}">
+      <md-card-content>
+        Text
+        content
+      </md-card-content>
+      <md-card-actions align="start">
+        <button md-button
+                (click)="onAction1">
+          Action1
+        </button>
+        <button md-button
+                (click)="onAction2">
+          Action2
+        </button>
+      </md-card-actions>
+      <md-card-footer>
+        Footer
+      </md-card-footer>
+    </md-card>
+  </md-tab>
+  <md-tab label="Settings">
+    Tab2
+    content
+  </md-tab>
+</md-tab-group>
+
+                                                
